@@ -13,7 +13,7 @@ for i in st:
     slovar[i]['age'] = rd.randint(18, 70)
     slovar[i]['sex'] = rd.choice(['ж', 'м'])
     slovar[i]['contry'] = rd.choice(['rf','kz','rb','uk'])
-    slovar[i]['mounth'] = rd.choice(['may', 'june', 'may', 'mart'])
+    slovar[i]['mounth'] = rd.choice(['april', 'june', 'may', 'mart'])
     slovar[i]['zp'] = rd.randint(15000,120000)
     slovar[i]['point'] = rd.randint(0,10)
 class vakcina:
