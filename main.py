@@ -16,7 +16,6 @@ for i in st:
     slovar[i]['mounth'] = rd.choice(['may', 'june', 'may', 'mart'])
     slovar[i]['zp'] = rd.randint(15000,120000)
     slovar[i]['point'] = rd.randint(0,10)
-print(slovar)
 class vakcina:
     def __init__(self):
         print('Hello')
@@ -24,7 +23,7 @@ class vakcina:
         sm = []
         for i in list(dct.keys()):
             sm.append(dct[i]['age'])
-        print('Средний возраст', sum(sm)/len(sm))
+        print('Средний возраст прошедших вакцинацию', sum(sm)/len(sm))
     def women(self, dct):
         count = 0
         for i in (dct.keys()):
@@ -94,7 +93,7 @@ class vakcina:
         for i in list(dct.keys()):
             ms[dct[i]['mounth']].append(dct[i]['age'])
         for i in list(ms.keys()):
-            print (i , len (ms[i]))
+            print ('В', i , len (ms[i]))
     def ino(self, dct):
         ms = {}
         for i in list(dct.keys()):
@@ -108,6 +107,19 @@ class vakcina:
                     count += 1
             a = count/len(ms[i])
             print(i, int(a*100), '% иностранных граждан')
+    def rus(self, dct):
+        ms = {}
+        for i in list(dct.keys()):
+            ms[dct[i]['mounth']] = []
+        for i in list(dct.keys()):
+            ms[dct[i]['mounth']].append(dct[i]['contry'])
+        for i in list(ms.keys()):
+            count = 0
+            for j in ms[i]:
+                if j == 'rf':
+                    count += 1
+            a = count/len(ms[i])
+            print(i, int(a*100), '% российских граждан')
     def zp_loyl(self, dct):
         sm = {}
         for i in list(dct.keys()):
@@ -129,4 +141,5 @@ stk.sred_voz(slovar)
 stk.voz_loyl(slovar)
 stk.mes_vak(slovar)
 stk.ino(slovar)
+stk.rus(slovar)
 stk.zp_loyl(slovar)
